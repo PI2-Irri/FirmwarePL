@@ -12,6 +12,7 @@
 #include <vector>
 #include <string>
 #include <cstdint>
+#include <cstring>
 
 // Raspberry
 #include <RF24/RF24.h>
@@ -38,6 +39,7 @@ using std::cout;
 using std::mutex;
 using std::string;
 using std::thread;
+using std::vector;
 // using namespace std;
 /************************************/
 
@@ -109,7 +111,8 @@ void nrf24SendTcpQueue();
 void nrf24Read();
 void testControllerHub();
 void nrf24Restart();
-// vector<string> splitDelimiter(const string &str, char delimiter);
+void signalHandler(int signum);
+
 TActuatorCommand actuatorCommandParser(const string &str);
 
 #endif

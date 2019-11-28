@@ -28,7 +28,9 @@
 
 // TCP
 #include <tcp/tcp_server.h>
-// #include <tcp/tcp_client.h>
+#include <tcp/tcp_client.h>
+// #include <tcpClient.hpp>
+
 // file mainIrri.cpp
 
 /************************************************
@@ -56,10 +58,11 @@ std::queue<string> g_tcpRecMsg;
 std::queue<string> g_rfRecMsg;
 
 TcpServer tcpServer;
-// TcpClient tcpClient;
+TcpClient tcpClient;
 
 Client client;
-server_observer_t observer1, observer2;
+server_observer_t observer1;
+client_observer_t observer;
 
 /************************************/
 /*******************************************************************************
@@ -74,6 +77,9 @@ int main(int argc, char *argv[])
   plog::init(plog::verbose, "Log.txt").addAppender(&consoleAppender);
   PLOG_INFO << "IRRI says: Hello Log World!";
 
+  // signal(SIGINT, sig_exit);
+  signal(SIGTSTP, signalHandler);
+
   nrf24Setup();
 
   //Catch Signal
@@ -81,7 +87,7 @@ int main(int argc, char *argv[])
   std::thread tReceiveNrf24(nrf24Read);        // Main Loop
   std::thread tSendNrf24(nrf24SendTcpQueue);   // spawn new thread that calls bar(0)
   std::thread tTcpServer(tcpServerOpen, 9001); // spawn new thread that calls foo()
-  // std::thread tTcpClient(tcpServerOpen, 9000); // spawn new thread that calls foo()
+  std::thread tTcpClient(tcpClientSend, 9000); // spawn new thread that calls foo()
 
   PLOG_INFO << "Aplication Started\n";
 

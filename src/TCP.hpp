@@ -29,7 +29,7 @@
 
 // TCP
 #include <tcp/tcp_server.h>
-// #include <tcp/tcp_client.h>
+#include <tcp/tcp_client.h>
 
 /************************************************
   ... NameSpaces
@@ -49,16 +49,24 @@ using std::thread;
 //  plog::init(plog::verbose, "Log.txt").addAppender(&consoleAppender);
 
 extern std::queue<string> g_tcpRecMsg;
- extern std::queue<string> g_rfRecMsg;
+extern std::queue<string> g_rfRecMsg;
 
 extern mutex mtx;
 extern mutex mtxrf;
 
 extern TcpServer tcpServer;
-extern server_observer_t observer1, observer2;
+extern TcpClient tcpClient;
+extern server_observer_t observer1;
+extern client_observer_t observer;
 /***************************/
 void onIncomingMsg1(const Client &client, const char *msg, size_t size);
 void onClientDisconnected(const Client &client);
 void tcpServerOpen(int p_port);
+
+void onDisconnection(const pipe_ret_t &ret);
+void onIncomingMsg(const char *msg, size_t size);
+void sig_exit(int s);
+void tcpClientConnect(int p_port);
+void tcpClientSend(int p_port);
 
 #endif

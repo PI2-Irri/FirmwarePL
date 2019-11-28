@@ -57,25 +57,39 @@ void nrf24Setup()
     radio.startListening();
 }
 
+// vector<string> splitDelimiter(const string &str, char delimiter);
+
 TActuatorCommand actuatorCommandParser(const string &str)
 {
-
     TActuatorCommand command;
-    // vector<string> v;
-    // vector<string> s = splitDelimiter(str, ',');
-    // for (auto tokens : s)
-    // {
-    //     v = splitDelimiter(tokens, ':');
-    //     if (v[0] == "status")
-    //     {
-    //         if (v[1] == "on")
-    //             command.status = true;
-    //         else
-    //             command.status = false;
-    //     }
-    //     if (v[0] == "timer")
-    //         command.timer = (uint16_t)stoi(v[1]);
-    // }
+    std::string delims = ":,";
+    std::vector<std::string> results;
+    size_t lastOffset = 0;
+
+    while (true)
+    {
+        size_t offset = str.find_first_of(delims, lastOffset);
+        results.push_back(str.substr(lastOffset, offset - lastOffset));
+        if (offset == std::string::npos)
+            break;
+        else
+            lastOffset = offset + 1; // add one to skip the delimiter
+    }
+
+    for (size_t i = 0; i < results.size(); i++)
+    {
+        if (results[i] == "status")
+        {
+            if (results[i + 1] == "on")
+                command.status = true;
+            else
+                command.status = false;
+        }
+        else if (results[i] == "timer")
+            command.timer = (uint16_t)std::stoi(results[i + 1]);
+        std::cout << results[i] << std::endl;
+    }
+
     return command;
 }
 
@@ -227,4 +241,9 @@ void testControllerHub()
         cout << "SENT.\n";
     else
         cout << "FAILED :(\n";
+}
+
+void signalHandler(int signum)
+{
+    testCHub = true;
 }

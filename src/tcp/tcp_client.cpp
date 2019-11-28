@@ -1,13 +1,14 @@
 
 #include "tcp_client.h"
 
-
-pipe_ret_t TcpClient::connectTo(const std::string & address, int port) {
+pipe_ret_t TcpClient::connectTo(const std::string &address, int port)
+{
     m_sockfd = 0;
     pipe_ret_t ret;
 
-    m_sockfd = socket(AF_INET , SOCK_STREAM , 0);
-    if (m_sockfd == -1) { //socket failed
+    m_sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (m_sockfd == -1)
+    { //socket failed
         ret.success = false;
         ret.msg = strerror(errno);
         return ret;
@@ -15,23 +16,26 @@ pipe_ret_t TcpClient::connectTo(const std::string & address, int port) {
 
     int inetSuccess = inet_aton(address.c_str(), &m_server.sin_addr);
 
-    if(!inetSuccess) { // inet_addr failed to parse address
+    if (!inetSuccess)
+    { // inet_addr failed to parse address
         // if hostname is not in IP strings and dots format, try resolve it
         struct hostent *host;
         struct in_addr **addrList;
-        if ( (host = gethostbyname( address.c_str() ) ) == NULL){
+        if ((host = gethostbyname(address.c_str())) == NULL)
+        {
             ret.success = false;
             ret.msg = "Failed to resolve hostname";
             return ret;
         }
-        addrList = (struct in_addr **) host->h_addr_list;
+        addrList = (struct in_addr **)host->h_addr_list;
         m_server.sin_addr = *addrList[0];
     }
     m_server.sin_family = AF_INET;
-    m_server.sin_port = htons( port );
+    m_server.sin_port = htons(port);
 
-    int connectRet = connect(m_sockfd , (struct sockaddr *)&m_server , sizeof(m_server));
-    if (connectRet == -1) {
+    int connectRet = connect(m_sockfd, (struct sockaddr *)&m_server, sizeof(m_server));
+    if (connectRet == -1)
+    {
         ret.success = false;
         ret.msg = strerror(errno);
         return ret;
@@ -41,16 +45,18 @@ pipe_ret_t TcpClient::connectTo(const std::string & address, int port) {
     return ret;
 }
 
-
-pipe_ret_t TcpClient::sendMsg(const char * msg, size_t size) {
+pipe_ret_t TcpClient::sendMsg(const char *msg, size_t size)
+{
     pipe_ret_t ret;
     int numBytesSent = send(m_sockfd, msg, size, 0);
-    if (numBytesSent < 0 ) { // send failed
+    if (numBytesSent < 0)
+    { // send failed
         ret.success = false;
         ret.msg = strerror(errno);
         return ret;
     }
-    if ((uint)numBytesSent < size) { // not all bytes were sent
+    if ((uint)numBytesSent < size)
+    { // not all bytes were sent
         ret.success = false;
         char msg[100];
         sprintf(msg, "Only %d bytes out of %lu was sent to client", numBytesSent, size);
@@ -61,11 +67,13 @@ pipe_ret_t TcpClient::sendMsg(const char * msg, size_t size) {
     return ret;
 }
 
-void TcpClient::subscribe(const client_observer_t & observer) {
+void TcpClient::subscribe(const client_observer_t &observer)
+{
     m_subscibers.push_back(observer);
 }
 
-void TcpClient::unsubscribeAll() {
+void TcpClient::unsubscribeAll()
+{
     m_subscibers.clear();
 }
 
@@ -75,10 +83,13 @@ void TcpClient::unsubscribeAll() {
  * from clients with IP address identical to
  * the specific observer requested IP
  */
-void TcpClient::publishServerMsg(const char * msg, size_t msgSize) {
-    for (uint i=0; i<m_subscibers.size(); i++) {
-        if (m_subscibers[i].incoming_packet_func != NULL) {
-            (*m_subscibers[i].incoming_packet_func)(msg, msgSize);
+void TcpClient::publishServerMsg(const char *msg, size_t msgSize)
+{
+    for (uint i = 0; i < m_subscibers.size(); i++)
+    {
+        if (m_subscibers[i].clientIncomingPacketFunc != NULL)
+        {
+            (*m_subscibers[i].clientIncomingPacketFunc)(msg, msgSize);
         }
     }
 }
@@ -89,10 +100,13 @@ void TcpClient::publishServerMsg(const char * msg, size_t msgSize) {
  * with IP address identical to the specific
  * observer requested IP
  */
-void TcpClient::publishServerDisconnected(const pipe_ret_t & ret) {
-    for (uint i=0; i<m_subscibers.size(); i++) {
-        if (m_subscibers[i].disconnected_func != NULL) {
-            (*m_subscibers[i].disconnected_func)(ret);
+void TcpClient::publishServerDisconnected(const pipe_ret_t &ret)
+{
+    for (uint i = 0; i < m_subscibers.size(); i++)
+    {
+        if (m_subscibers[i].clientDisconnectedFunc != NULL)
+        {
+            (*m_subscibers[i].clientDisconnectedFunc)(ret);
         }
     }
 }
@@ -100,34 +114,44 @@ void TcpClient::publishServerDisconnected(const pipe_ret_t & ret) {
 /*
  * Receive server packets, and notify user
  */
-void TcpClient::ReceiveTask() {
+void TcpClient::ReceiveTask()
+{
 
-    while(!stop) {
+    while (!stop)
+    {
         char msg[MAX_PACKET_SIZE];
         int numOfBytesReceived = recv(m_sockfd, msg, MAX_PACKET_SIZE, 0);
-        if(numOfBytesReceived < 1) {
+        if (numOfBytesReceived < 1)
+        {
             pipe_ret_t ret;
             ret.success = false;
             stop = true;
-            if (numOfBytesReceived == 0) { //server closed connection
+            if (numOfBytesReceived == 0)
+            { //server closed connection
                 ret.msg = "Server closed connection";
-            } else {
+            }
+            else
+            {
                 ret.msg = strerror(errno);
             }
             publishServerDisconnected(ret);
             finish();
             break;
-        } else {
+        }
+        else
+        {
             publishServerMsg(msg, numOfBytesReceived);
         }
     }
 }
 
-pipe_ret_t TcpClient::finish(){
+pipe_ret_t TcpClient::finish()
+{
     stop = true;
     terminateReceiveThread();
     pipe_ret_t ret;
-    if (close(m_sockfd) == -1) { // close failed
+    if (close(m_sockfd) == -1)
+    { // close failed
         ret.success = false;
         ret.msg = strerror(errno);
         return ret;
@@ -136,14 +160,17 @@ pipe_ret_t TcpClient::finish(){
     return ret;
 }
 
-void TcpClient::terminateReceiveThread() {
-    if (m_receiveTask != nullptr) {
+void TcpClient::terminateReceiveThread()
+{
+    if (m_receiveTask != nullptr)
+    {
         m_receiveTask->detach();
         delete m_receiveTask;
         m_receiveTask = nullptr;
     }
 }
 
-TcpClient::~TcpClient() {
+TcpClient::~TcpClient()
+{
     terminateReceiveThread();
 }
