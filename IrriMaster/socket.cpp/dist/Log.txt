@@ -1,0 +1,247 @@
+﻿2019-11-26 21:54:28.994 INFO  [1870] [main@114] IRRI says: Hello Log World!
+2019-11-26 21:54:29.107 INFO  [1870] [main@118] configureRadio: RF24 started!
+2019-11-26 21:54:29.111 INFO  [1870] [main@125] MAIN LOOP STARTED
+2019-11-26 21:55:17.606 VERB  [1870] [main@167] InGround Pipe 3: Recv: 699% RH, 24.875 Celsius and 0% battery
+2019-11-26 21:56:05.575 VERB  [1870] [main@167] InGround Pipe 4: Recv: 460% RH, 25.25 Celsius and 1023% battery
+2019-11-26 21:56:05.576 VERB  [1870] [main@167] InGround Pipe 4: Recv: 501% RH, 25.375 Celsius and 1023% battery
+2019-11-26 21:56:05.576 VERB  [1870] [main@167] InGround Pipe 4: Recv: 508% RH, 25.4375 Celsius and 1023% battery
+2019-11-26 21:56:08.946 VERB  [1870] [main@167] InGround Pipe 4: Recv: 459% RH, 25.5 Celsius and 998% battery
+2019-11-26 21:56:08.946 VERB  [1870] [main@167] InGround Pipe 4: Recv: 501% RH, 25.5 Celsius and 1023% battery
+2019-11-26 21:56:12.336 VERB  [1870] [main@167] InGround Pipe 4: Recv: 508% RH, 25.5625 Celsius and 1023% battery
+2019-11-26 21:56:12.336 VERB  [1870] [main@167] InGround Pipe 4: Recv: 510% RH, 25.5625 Celsius and 1023% battery
+2019-11-26 21:56:12.336 VERB  [1870] [main@167] InGround Pipe 4: Recv: 510% RH, 25.625 Celsius and 1023% battery
+2019-11-26 21:56:15.855 VERB  [1870] [main@167] InGround Pipe 4: Recv: 510% RH, 25.625 Celsius and 1019% battery
+2019-11-26 21:56:15.856 VERB  [1870] [main@167] InGround Pipe 4: Recv: 510% RH, 25.625 Celsius and 1017% battery
+2019-11-26 21:56:15.856 VERB  [1870] [main@167] InGround Pipe 4: Recv: 503% RH, 25.625 Celsius and 1023% battery
+2019-11-26 21:56:19.146 VERB  [1870] [main@167] InGround Pipe 4: Recv: 502% RH, 25.625 Celsius and 1014% battery
+2019-11-26 21:56:22.585 VERB  [1870] [main@167] InGround Pipe 4: Recv: 502% RH, 25.6875 Celsius and 1013% battery
+2019-11-26 21:56:22.586 VERB  [1870] [main@167] InGround Pipe 3: Recv: 700% RH, 24.875 Celsius and 0% battery
+2019-11-26 21:56:22.586 VERB  [1870] [main@167] InGround Pipe 4: Recv: 502% RH, 25.625 Celsius and 1022% battery
+2019-11-26 21:56:26.066 VERB  [1870] [main@167] InGround Pipe 4: Recv: 502% RH, 25.625 Celsius and 1021% battery
+2019-11-26 21:56:26.066 VERB  [1870] [main@167] InGround Pipe 4: Recv: 502% RH, 25.625 Celsius and 1023% battery
+2019-11-26 21:56:29.636 VERB  [1870] [main@167] InGround Pipe 4: Recv: 502% RH, 25.625 Celsius and 1023% battery
+2019-11-26 21:56:29.636 VERB  [1870] [main@167] InGround Pipe 4: Recv: 502% RH, 25.625 Celsius and 1023% battery
+2019-11-26 21:56:33.295 VERB  [1870] [main@167] InGround Pipe 4: Recv: 502% RH, 25.625 Celsius and 1023% battery
+2019-11-26 21:56:33.296 VERB  [1870] [main@167] InGround Pipe 4: Recv: 502% RH, 25.6875 Celsius and 1012% battery
+2019-11-26 21:56:33.296 VERB  [1870] [main@167] InGround Pipe 4: Recv: 501% RH, 25.6875 Celsius and 1023% battery
+2019-11-27 13:24:39.987 INFO  [900] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:24:40.101 INFO  [900] [main@426] configureRadio: RF24 started!
+2019-11-27 13:24:40.103 INFO  [900] [main@433] MAIN LOOP STARTED
+2019-11-27 13:24:43.684 VERB  [900] [main@475] InGround Pipe 4: Recv: 553% RH, 25.9375 Celsius and 1023% battery
+2019-11-27 13:24:49.684 VERB  [900] [main@475] InGround Pipe 3: Recv: 43% RH, 87 Celsius and 24% battery
+2019-11-27 13:24:54.966 VERB  [900] [main@475] InGround Pipe 4: Recv: 552% RH, 26.5 Celsius and 1023% battery
+2019-11-27 13:24:55.416 VERB  [900] [main@475] InGround Pipe 4: Recv: 26% RH, 22 Celsius and 8% battery
+2019-11-27 13:25:03.421 VERB  [900] [main@475] InGround Pipe 2: Recv: 6% RH, 86 Celsius and 55% battery
+2019-11-27 13:25:06.252 VERB  [900] [main@475] InGround Pipe 4: Recv: 552% RH, 27 Celsius and 1023% battery
+2019-11-27 13:25:11.427 VERB  [900] [main@475] InGround Pipe 3: Recv: 78% RH, 42 Celsius and 57% battery
+2019-11-27 13:25:17.534 VERB  [900] [main@475] InGround Pipe 4: Recv: 551% RH, 27.4375 Celsius and 1023% battery
+2019-11-27 13:25:19.433 VERB  [900] [main@475] InGround Pipe 4: Recv: 52% RH, 90 Celsius and 65% battery
+2019-11-27 13:25:27.442 VERB  [900] [main@475] InGround Pipe 2: Recv: 79% RH, 27 Celsius and 92% battery
+2019-11-27 13:25:28.816 VERB  [900] [main@475] InGround Pipe 4: Recv: 551% RH, 27.8125 Celsius and 1023% battery
+2019-11-27 13:25:35.446 VERB  [900] [main@475] InGround Pipe 3: Recv: 59% RH, 76 Celsius and 5% battery
+2019-11-27 13:25:40.099 VERB  [900] [main@475] InGround Pipe 4: Recv: 551% RH, 27.875 Celsius and 1023% battery
+2019-11-27 13:25:47.186 VERB  [900] [main@475] InGround Pipe 2: Recv: 98% RH, 92 Celsius and 82% battery
+2019-11-27 13:25:51.383 VERB  [900] [main@475] InGround Pipe 4: Recv: 551% RH, 27.6875 Celsius and 1023% battery
+2019-11-27 13:25:53.978 VERB  [900] [main@475] InGround Pipe 3: Recv: 98% RH, 51 Celsius and 30% battery
+2019-11-27 13:25:55.750 INFO  [916] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:25:55.862 INFO  [916] [main@426] configureRadio: RF24 started!
+2019-11-27 13:25:55.866 INFO  [916] [main@433] MAIN LOOP STARTED
+2019-11-27 13:26:01.984 VERB  [916] [main@475] InGround Pipe 4: Recv: 3% RH, 93 Celsius and 13% battery
+2019-11-27 13:26:02.668 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 27.4375 Celsius and 1023% battery
+2019-11-27 13:26:09.989 VERB  [916] [main@475] InGround Pipe 2: Recv: 22% RH, 60 Celsius and 68% battery
+2019-11-27 13:26:13.953 VERB  [916] [main@475] InGround Pipe 4: Recv: 550% RH, 27.1875 Celsius and 1023% battery
+2019-11-27 13:26:17.995 VERB  [916] [main@475] InGround Pipe 3: Recv: 86% RH, 49 Celsius and 40% battery
+2019-11-27 13:26:25.243 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 26.9375 Celsius and 1023% battery
+2019-11-27 13:26:37.389 VERB  [916] [main@475] InGround Pipe 4: Recv: 550% RH, 26.8125 Celsius and 1023% battery
+2019-11-27 13:26:52.404 VERB  [916] [main@475] InGround Pipe 4: Recv: 550% RH, 26.625 Celsius and 1023% battery
+2019-11-27 13:26:52.405 VERB  [916] [main@475] InGround Pipe 2: Recv: 63% RH, 34 Celsius and 93% battery
+2019-11-27 13:26:59.107 VERB  [916] [main@475] InGround Pipe 4: Recv: 550% RH, 26.5 Celsius and 1023% battery
+2019-11-27 13:26:59.712 VERB  [916] [main@475] InGround Pipe 3: Recv: 82% RH, 45 Celsius and 73% battery
+2019-11-27 13:27:07.719 VERB  [916] [main@475] InGround Pipe 4: Recv: 64% RH, 58 Celsius and 7% battery
+2019-11-27 13:27:10.391 VERB  [916] [main@475] InGround Pipe 4: Recv: 550% RH, 26.375 Celsius and 1023% battery
+2019-11-27 13:27:15.751 VERB  [916] [main@475] InGround Pipe 2: Recv: 66% RH, 64 Celsius and 82% battery
+2019-11-27 13:27:21.675 VERB  [916] [main@475] InGround Pipe 4: Recv: 550% RH, 26.25 Celsius and 1023% battery
+2019-11-27 13:27:23.762 VERB  [916] [main@475] InGround Pipe 3: Recv: 69% RH, 46 Celsius and 36% battery
+2019-11-27 13:27:31.779 VERB  [916] [main@475] InGround Pipe 4: Recv: 65% RH, 43 Celsius and 46% battery
+2019-11-27 13:27:32.960 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 26.125 Celsius and 1023% battery
+2019-11-27 13:27:39.786 VERB  [916] [main@475] InGround Pipe 2: Recv: 82% RH, 15 Celsius and 81% battery
+2019-11-27 13:27:46.743 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 25.9375 Celsius and 1023% battery
+2019-11-27 13:27:47.794 VERB  [916] [main@475] InGround Pipe 3: Recv: 54% RH, 55 Celsius and 7% battery
+2019-11-27 13:27:55.531 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 25.8125 Celsius and 1023% battery
+2019-11-27 13:27:55.802 VERB  [916] [main@475] InGround Pipe 4: Recv: 7% RH, 38 Celsius and 77% battery
+2019-11-27 13:28:03.819 VERB  [916] [main@475] InGround Pipe 2: Recv: 26% RH, 70 Celsius and 99% battery
+2019-11-27 13:28:06.814 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 25.6875 Celsius and 1023% battery
+2019-11-27 13:28:11.829 VERB  [916] [main@475] InGround Pipe 3: Recv: 78% RH, 57 Celsius and 50% battery
+2019-11-27 13:28:18.097 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 25.5625 Celsius and 1023% battery
+2019-11-27 13:28:19.852 VERB  [916] [main@475] InGround Pipe 4: Recv: 91% RH, 59 Celsius and 3% battery
+2019-11-27 13:28:27.857 VERB  [916] [main@475] InGround Pipe 2: Recv: 74% RH, 66 Celsius and 45% battery
+2019-11-27 13:28:29.382 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 25.5 Celsius and 1023% battery
+2019-11-27 13:28:35.869 VERB  [916] [main@475] InGround Pipe 3: Recv: 26% RH, 4 Celsius and 92% battery
+2019-11-27 13:28:40.664 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 25.4375 Celsius and 1023% battery
+2019-11-27 13:28:47.332 VERB  [916] [main@475] InGround Pipe 2: Recv: 45% RH, 53 Celsius and 12% battery
+2019-11-27 13:28:53.865 VERB  [916] [main@475] InGround Pipe 4: Recv: 551% RH, 25.375 Celsius and 1023% battery
+2019-11-27 13:28:59.977 VERB  [916] [main@475] InGround Pipe 2: Recv: 20% RH, 75 Celsius and 38% battery
+2019-11-27 13:29:03.227 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 25.25 Celsius and 1023% battery
+2019-11-27 13:29:14.508 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 25.1875 Celsius and 1023% battery
+2019-11-27 13:29:25.789 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 25.1875 Celsius and 1023% battery
+2019-11-27 13:29:37.070 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 25.125 Celsius and 1023% battery
+2019-11-27 13:29:48.350 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 25.125 Celsius and 1023% battery
+2019-11-27 13:29:59.630 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 25.0625 Celsius and 1023% battery
+2019-11-27 13:30:10.910 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 25 Celsius and 1023% battery
+2019-11-27 13:30:22.190 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 25 Celsius and 1023% battery
+2019-11-27 13:30:33.469 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 25 Celsius and 1023% battery
+2019-11-27 13:30:44.749 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:30:56.031 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:31:07.313 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:31:18.598 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:31:29.880 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:31:41.162 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:31:52.441 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:32:03.723 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:32:15.002 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:32:26.281 VERB  [916] [main@475] InGround Pipe 4: Recv: 552% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:32:35.689 INFO  [935] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:32:35.801 INFO  [935] [main@426] configureRadio: RF24 started!
+2019-11-27 13:32:35.803 INFO  [935] [main@433] MAIN LOOP STARTED
+2019-11-27 13:32:37.560 VERB  [935] [main@475] InGround Pipe 4: Recv: 552% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:32:37.622 VERB  [935] [main@475] InGround Pipe 2: Recv: 80% RH, 79 Celsius and 11% battery
+2019-11-27 13:32:47.772 VERB  [935] [main@475] InGround Pipe 3: Recv: 21% RH, 34 Celsius and 58% battery
+2019-11-27 13:32:48.840 VERB  [935] [main@475] InGround Pipe 4: Recv: 552% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:32:53.634 VERB  [935] [main@475] InGround Pipe 4: Recv: 25% RH, 28 Celsius and 91% battery
+2019-11-27 13:33:00.119 VERB  [935] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:33:07.156 INFO  [951] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:33:07.268 INFO  [951] [main@426] configureRadio: RF24 started!
+2019-11-27 13:33:07.271 INFO  [951] [main@433] MAIN LOOP STARTED
+2019-11-27 13:33:08.650 VERB  [951] [main@475] InGround Pipe 2: Recv: 47% RH, 88 Celsius and 53% battery
+2019-11-27 13:33:11.407 VERB  [951] [main@475] InGround Pipe 4: Recv: 552% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:33:21.177 VERB  [951] [main@475] InGround Pipe 3: Recv: 25% RH, 31 Celsius and 90% battery
+2019-11-27 13:33:22.686 VERB  [951] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:24:24.829 INFO  [873] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:24:24.943 INFO  [873] [main@426] configureRadio: RF24 started!
+2019-11-27 13:24:24.947 INFO  [873] [main@433] MAIN LOOP STARTED
+2019-11-27 13:24:31.817 VERB  [873] [main@475] InGround Pipe 4: Recv: 551% RH, 25.1875 Celsius and 1023% battery
+2019-11-27 13:24:41.115 VERB  [873] [main@475] InGround Pipe 4: Recv: 552% RH, 25.125 Celsius and 1023% battery
+2019-11-27 13:24:52.395 VERB  [873] [main@475] InGround Pipe 4: Recv: 552% RH, 25.125 Celsius and 1023% battery
+2019-11-27 13:24:58.919 INFO  [892] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:24:59.032 INFO  [892] [main@426] configureRadio: RF24 started!
+2019-11-27 13:24:59.035 INFO  [892] [main@433] MAIN LOOP STARTED
+2019-11-27 13:25:07.345 INFO  [908] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:25:07.457 INFO  [908] [main@426] configureRadio: RF24 started!
+2019-11-27 13:25:07.461 INFO  [908] [main@433] MAIN LOOP STARTED
+2019-11-27 13:25:18.695 VERB  [908] [main@475] InGround Pipe 3: Recv: 0% RH, 0 Celsius and 0% battery
+2019-11-27 13:25:18.715 VERB  [908] [main@475] InGround Pipe 3: Recv: 192% RH, 0 Celsius and 0% battery
+2019-11-27 13:25:18.756 VERB  [908] [main@462] ControllerHub Pipe 1: Recv: 10280 litres and reservoir level is 40
+2019-11-27 13:25:18.808 VERB  [908] [main@475] InGround Pipe 3: Recv: 0% RH, 0 Celsius and 0% battery
+2019-11-27 13:25:18.809 VERB  [908] [main@475] InGround Pipe 3: Recv: 192% RH, 0 Celsius and 0% battery
+2019-11-27 13:25:26.276 VERB  [908] [main@475] InGround Pipe 4: Recv: 552% RH, 25.0625 Celsius and 1023% battery
+2019-11-27 13:25:37.554 VERB  [908] [main@475] InGround Pipe 4: Recv: 552% RH, 25 Celsius and 1023% battery
+2019-11-27 13:25:48.832 VERB  [908] [main@475] InGround Pipe 4: Recv: 552% RH, 25 Celsius and 1023% battery
+2019-11-27 13:26:02.142 VERB  [908] [main@475] InGround Pipe 4: Recv: 552% RH, 25 Celsius and 1023% battery
+2019-11-27 13:26:11.387 VERB  [908] [main@475] InGround Pipe 4: Recv: 552% RH, 25 Celsius and 1023% battery
+2019-11-27 13:26:22.665 VERB  [908] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:26:33.945 VERB  [908] [main@475] InGround Pipe 4: Recv: 552% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:26:45.227 VERB  [908] [main@475] InGround Pipe 4: Recv: 553% RH, 24.9375 Celsius and 1023% battery
+2019-11-27 13:26:56.504 VERB  [908] [main@475] InGround Pipe 4: Recv: 553% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:27:07.781 VERB  [908] [main@475] InGround Pipe 4: Recv: 553% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:27:19.057 VERB  [908] [main@475] InGround Pipe 4: Recv: 553% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:27:30.333 VERB  [908] [main@475] InGround Pipe 4: Recv: 553% RH, 24.875 Celsius and 1023% battery
+2019-11-27 13:27:36.720 INFO  [924] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:27:36.832 INFO  [924] [main@426] configureRadio: RF24 started!
+2019-11-27 13:27:36.835 INFO  [924] [main@433] MAIN LOOP STARTED
+2019-11-27 13:27:41.609 VERB  [924] [main@475] InGround Pipe 4: Recv: 553% RH, 24.8125 Celsius and 1023% battery
+2019-11-27 13:27:52.885 VERB  [924] [main@475] InGround Pipe 4: Recv: 553% RH, 24.8125 Celsius and 1023% battery
+2019-11-27 13:28:04.161 VERB  [924] [main@475] InGround Pipe 4: Recv: 553% RH, 24.75 Celsius and 1023% battery
+2019-11-27 13:28:15.437 VERB  [924] [main@475] InGround Pipe 4: Recv: 553% RH, 24.75 Celsius and 1023% battery
+2019-11-27 13:28:26.713 VERB  [924] [main@475] InGround Pipe 4: Recv: 553% RH, 24.75 Celsius and 1023% battery
+2019-11-27 13:28:37.988 VERB  [924] [main@475] InGround Pipe 4: Recv: 553% RH, 24.75 Celsius and 1023% battery
+2019-11-27 13:28:49.264 VERB  [924] [main@475] InGround Pipe 4: Recv: 553% RH, 24.6875 Celsius and 1023% battery
+2019-11-27 13:28:54.315 INFO  [940] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:28:54.427 INFO  [940] [main@426] configureRadio: RF24 started!
+2019-11-27 13:28:54.443 INFO  [940] [main@433] MAIN LOOP STARTED
+2019-11-27 13:29:00.539 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.6875 Celsius and 1023% battery
+2019-11-27 13:29:23.140 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.625 Celsius and 1023% battery
+2019-11-27 13:29:34.415 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5625 Celsius and 1023% battery
+2019-11-27 13:29:45.690 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5625 Celsius and 1023% battery
+2019-11-27 13:29:56.965 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5625 Celsius and 1023% battery
+2019-11-27 13:30:08.239 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5625 Celsius and 1023% battery
+2019-11-27 13:30:19.517 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5625 Celsius and 1023% battery
+2019-11-27 13:30:30.795 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5625 Celsius and 1023% battery
+2019-11-27 13:30:42.072 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5625 Celsius and 1023% battery
+2019-11-27 13:30:53.349 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:31:04.629 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:31:15.904 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:31:27.178 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:31:49.771 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:32:01.045 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:32:12.319 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:32:23.593 VERB  [940] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:32:34.866 VERB  [940] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:33:04.323 INFO  [1024] [main@422] IRRI says: Hello Log World!
+2019-11-27 13:33:04.435 INFO  [1024] [main@426] configureRadio: RF24 started!
+2019-11-27 13:33:04.439 INFO  [1024] [main@433] MAIN LOOP STARTED
+2019-11-27 13:33:08.687 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:33:19.963 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:33:31.236 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:33:42.509 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:33:53.788 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:34:05.064 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:34:16.338 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:34:27.617 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:34:38.893 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:34:50.172 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:35:01.445 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:35:13.923 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:35:24.000 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:35:35.276 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:35:46.548 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:35:57.824 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:36:09.097 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:36:20.373 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:36:31.646 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:36:42.919 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:36:54.193 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:37:05.472 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:37:16.745 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:37:28.018 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:37:39.291 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:37:50.570 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:38:01.843 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.5 Celsius and 1023% battery
+2019-11-27 13:38:13.116 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:38:24.388 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:38:35.661 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:38:46.937 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:38:58.213 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:39:09.490 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:39:20.762 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:39:32.038 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:39:43.311 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:39:54.590 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:40:05.863 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:40:17.136 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:40:28.411 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.4375 Celsius and 1023% battery
+2019-11-27 13:40:39.687 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.375 Celsius and 1023% battery
+2019-11-27 13:40:50.965 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.375 Celsius and 1023% battery
+2019-11-27 13:41:02.238 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.375 Celsius and 1023% battery
+2019-11-27 13:41:13.510 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.375 Celsius and 1023% battery
+2019-11-27 13:41:24.786 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.375 Celsius and 1023% battery
+2019-11-27 13:41:36.067 VERB  [1024] [main@475] InGround Pipe 4: Recv: 554% RH, 24.375 Celsius and 1023% battery
+2019-11-27 13:41:47.340 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.375 Celsius and 1023% battery
+2019-11-27 13:41:58.612 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.3125 Celsius and 1023% battery
+2019-11-27 13:42:09.884 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.3125 Celsius and 1023% battery
+2019-11-27 13:42:21.162 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.3125 Celsius and 1023% battery
+2019-11-27 13:42:50.746 VERB  [1024] [main@475] InGround Pipe 3: Recv: 685% RH, 24.25 Celsius and 1021% battery
+2019-11-27 13:42:55.070 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.25 Celsius and 1023% battery
+2019-11-27 13:43:01.239 VERB  [1024] [main@475] InGround Pipe 3: Recv: 687% RH, 24.25 Celsius and 1017% battery
+2019-11-27 13:43:11.707 VERB  [1024] [main@475] InGround Pipe 3: Recv: 686% RH, 24.3125 Celsius and 1017% battery
+2019-11-27 13:43:17.663 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.1875 Celsius and 1023% battery
+2019-11-27 13:43:22.174 VERB  [1024] [main@475] InGround Pipe 3: Recv: 687% RH, 24.375 Celsius and 1016% battery
+2019-11-27 13:43:28.950 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.25 Celsius and 1023% battery
+2019-11-27 13:43:32.663 VERB  [1024] [main@475] InGround Pipe 3: Recv: 687% RH, 24.375 Celsius and 1015% battery
+2019-11-27 13:43:40.222 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.1875 Celsius and 1023% battery
+2019-11-27 13:43:51.494 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.1875 Celsius and 1023% battery
+2019-11-27 13:44:02.767 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.1875 Celsius and 1023% battery
+2019-11-27 13:44:14.042 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.1875 Celsius and 1023% battery
+2019-11-27 13:44:25.317 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.1875 Celsius and 1023% battery
+2019-11-27 13:44:36.590 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.1875 Celsius and 1023% battery
+2019-11-27 13:44:47.862 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.1875 Celsius and 1023% battery
+2019-11-27 13:44:59.134 VERB  [1024] [main@475] InGround Pipe 4: Recv: 553% RH, 24.125 Celsius and 1023% battery
