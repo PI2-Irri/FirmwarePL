@@ -13,6 +13,7 @@
 #include <string>
 #include <cstdint>
 #include <cstring>
+#include <fstream>
 
 // Raspberry
 #include <RF24/RF24.h>
@@ -72,6 +73,26 @@ typedef struct inGroundTag
     ContextTag tag;
     uint64_t rfAdress;
 } TinGround;
+
+typedef struct telaAtuadorTag
+{
+
+    bool status;
+    uint16_t timer;
+    uint16_t water_comsumption;
+    uint8_t reservoir_level;
+    bool on;
+
+} TtelaAtuador;
+
+typedef struct telaMedidorTag
+{
+    bool status;
+        int moisture;
+    float temperature;
+    int battery;
+    int timer;
+} TtelaMedidor;
 /*************************************************************/
 
 /************************************************
@@ -101,6 +122,11 @@ extern std::queue<string> g_rfRecMsg;
 extern mutex mtx;
 extern mutex mtxrf;
 
+extern TtelaMedidor telaMedidores;
+extern TtelaAtuador telaAtuadores;
+
+extern int activeTimer;
+extern int normalTimer;
 
 /***************************/
 

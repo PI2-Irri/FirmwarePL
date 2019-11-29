@@ -36,6 +36,7 @@
 // // queue<ActuatorData> controllerHubData;
 // // queue<inGroundTag> inGroundData;
 // /************************************/
+
 std::queue<TActuatorData> controllerHubData;
 std::queue<TinGround> inGroundData;
 
@@ -44,6 +45,33 @@ bool rfBegin;
 uint8_t rfpipe = 1;
 bool testCHub = false;
 
+TActuatorData actuatorDATA;
+TinGround inGroundDATA;
+
+struct inGroundTag igDATA[3];
+
+int HR(int moisture)
+{
+    int hr;
+    hr = moisture;
+    return hr;
+}
+
+int Batterylvl(int bat)
+{
+    if (bat >= 950 && bat > 980)
+        return 2;
+    else if (bat >= 980 && bat > 1020)
+        return 3;
+    else if (bat >= 1020)
+        return 4;
+    else
+        return 0;
+}
+
+/*******************************************************************************
+*       NRF24
+******************************************************************************/
 void nrf24Setup()
 {
     // Radio Setup
@@ -56,6 +84,99 @@ void nrf24Setup()
     radio.printDetails();
     radio.startListening();
 }
+
+//configureRadio: Configure RF24 radio
+void configureRadio()
+{
+    radio.setAutoAck(true);
+    radio.setDataRate(RF24_250KBPS);
+    radio.setPALevel(RF24_PA_HIGH);
+    radio.setChannel(76);
+    radio.setCRCLength(RF24_CRC_16);
+    radio.setRetries(5, 15); // 5*250us delay with 15 retries
+}
+
+//configurePipes: Configure RF24 Pipes
+void configurePipes()
+{
+    for (uint8_t i = 1; i < 6; i++)
+        radio.openReadingPipe(i, pipes[i]);
+    radio.openWritingPipe(pipes[0]);
+}
+
+bool nrfWritetoController(TActuatorCommand cmd)
+{
+    mtx.lock();
+    bool sent;
+    PLOG_FATAL_IF(radio.failureDetected) << "RF24 FAILED!!!!!";
+    if (radio.failureDetected)
+        nrf24Restart();
+    radio.stopListening();
+    radio.openWritingPipe(pipes[0]);
+    sent = radio.write(&cmd, sizeof(cmd));
+    radio.startListening();
+    mtx.unlock();
+    return send;
+}
+
+void timerSystemOnline(int timer)
+{
+    // Change inGorund Timer  On
+    bool sent;
+    int temporizacao = 10;
+
+    PLOG_VERBOSE << "Changin inGround Timer to:" << activeTimer;
+    mtx.lock();
+    PLOG_FATAL_IF(radio.failureDetected) << "RF24 FAILED!!!!!";
+    if (radio.failureDetected)
+        nrf24Restart();
+    radio.stopListening();
+    radio.openWritingPipe(pipes[5]);
+    sent = radio.write(&activeTimer, sizeof(int));
+    radio.startListening();
+    mtx.unlock();
+
+    // Change inGorund Timer Off
+
+    delay(timer);
+
+    PLOG_VERBOSE << "Changin inGround Timer to:" << normalTimer;
+    mtx.lock();
+    PLOG_FATAL_IF(radio.failureDetected) << "RF24 FAILED!!!!!";
+    if (radio.failureDetected)
+        nrf24Restart();
+    radio.stopListening();
+    radio.openWritingPipe(pipes[5]);
+    sent = radio.write(&normalTimer, sizeof(int));
+    radio.startListening();
+    mtx.unlock();
+}
+/*****************************************************************************/
+
+/*******************************************************************************
+*       Telas
+******************************************************************************/
+void saveFileAtuadores(std::string file, TtelaAtuador cmd)
+{
+    std::ofstream myfile;
+    myfile.open(file, std::ios::trunc);
+    std::string msg = std::to_string(cmd.status) + ',' + std::to_string(cmd.reservoir_level) + ',' + std::to_string(cmd.on) + "\n";
+    myfile << msg;
+    myfile.close();
+}
+
+void saveFileMedidores(std::string file, TtelaMedidor cmd)
+{
+    std::ofstream myfile;
+    myfile.open(file, std::ios::trunc);
+    std::string msg = std::to_string(cmd.status) + ',' + std::to_string(cmd.battery) + ',' + std::to_string(cmd.moisture) + ',' + std::to_string(cmd.temperature) + "\n";
+    myfile << msg;
+    myfile.close();
+}
+
+/*******************************************************************************
+*       Others
+******************************************************************************/
 
 // vector<string> splitDelimiter(const string &str, char delimiter);
 
@@ -87,7 +208,7 @@ TActuatorCommand actuatorCommandParser(const string &str)
         }
         else if (results[i] == "timer")
             command.timer = (uint16_t)std::stoi(results[i + 1]);
-        std::cout << results[i] << std::endl;
+        // std::cout << results[i] << std::endl;
     }
 
     return command;
@@ -101,33 +222,42 @@ void nrf24SendTcpQueue()
         {
             mtx.lock();
             std::string msg = g_tcpRecMsg.front();
-            g_tcpRecMsg.pop();
+            // g_tcpRecMsg.pop();
             mtx.unlock();
 
-            PLOG_VERBOSE << "Queue:" << msg;
+            PLOG_VERBOSE << "Read from TCP queue: " << msg;
             TActuatorCommand cmd = actuatorCommandParser(msg);
-            bool sent;
 
-            mtx.lock();
-            PLOG_FATAL_IF(radio.failureDetected) << "RF24 FAILED!!!!!";
-            if (radio.failureDetected)
-                nrf24Restart();
-            radio.stopListening();
-            sent = radio.write(&cmd, sizeof(cmd));
-            radio.startListening();
-            mtx.unlock();
+            bool sent = nrfWritetoController(cmd);
 
             if (sent)
-                cout << "SENT.\n";
+            {
+                if (cmd.status)
+                    std::thread systemOn(timerSystemOnline, cmd.timer); // spawn new thread that calls foo()
+                PLOG_VERBOSE << "SENT";
+
+                telaAtuadores.status = true;
+
+                mtx.lock(); /**< Mutex Lock*/
+                g_tcpRecMsg.pop();
+                mtx.unlock(); /**< Mutex Unlock*/
+            }
             else
-                cout << "FAILED :(\n";
+            {
+                telaAtuadores.status = false;
+                PLOG_FATAL << "FAILED";
+                delay(5);
+            }
+            telaAtuadores.timer = cmd.timer;
+            telaAtuadores.on = cmd.status;
+
+            saveFileAtuadores("atuadores.txt", telaAtuadores);
         }
     }
 }
 
 void nrf24Restart()
 {
-
     radio.failureDetected = false;
     // Perform Radio Setup
     rfBegin = radio.begin();
@@ -159,33 +289,41 @@ void nrf24Read()
         {
             if (rfpipe == 1) // Message from ControllerHub
             {
-                // Read Message
                 TActuatorData rdata;
                 radio.read(&rdata, sizeof(rdata));
-                // Push message into Queue
-                // controllerHubData.push(rdata); -- save in file
                 std::string msg = "type:0,water_consumption:" + std::to_string(rdata.water_comsumption) + ",reservoir_level:" + std::to_string(rdata.reservoir_level) + "\n";
-                // mtxrf.lock();
                 g_rfRecMsg.push(msg);
-                // mtxrf.unlock();
-                PLOG_VERBOSE << "ControllerHub Pipe " << (int)rfpipe << ": Recv: " << rdata.water_comsumption << " litres and reservoir level is " << (int)rdata.reservoir_level;
+                PLOG_INFO << "CONTROLER HUB: " << (int)rfpipe << ": Recv: " << rdata.water_comsumption << " litres and reservoir level is " << (int)rdata.reservoir_level;
+
+                //TELA
+                telaAtuadores.status = true;
+                telaAtuadores.on = false;
+                telaAtuadores.reservoir_level = rdata.reservoir_level;
+                telaAtuadores.timer = 0;
+                telaAtuadores.water_comsumption = rdata.water_comsumption;
+                saveFileAtuadores("atuadores.txt", telaAtuadores);
             }
             else if (rfpipe > 1 && rfpipe < 5) // Message from InGround Sensors
             {
-                // Read Message
                 struct ContextTag rtag;
                 struct inGroundTag rdata;
                 radio.read(&rtag, sizeof(rtag));
-                // Push message into Queue
+
+                rtag.moisture = HR(rtag.moisture);
+                rtag.battery = Batterylvl(rtag.battery);
+
                 rdata.tag = rtag;
-                // rdata.rfAdress = pipes[pipe];
                 rdata.rfAdress = rfpipe;
-                // inGroundData.push(rdata); -- save in file
-                std::string msg = "type:1,temperature:" + std::to_string(rdata.tag.temperature) + ",ground_humidity:" + std::to_string(rdata.tag.moisture) + ",battery_level:" + std::to_string(rdata.tag.battery) + ",rf_address:" + std::to_string(rdata.rfAdress) + "\n";
-                // mtxrf.lock();
+                std::string msg = "type:1,temperature:" + std::to_string(rtag.temperature) + ",ground_humidity:" + std::to_string(rtag.moisture) + ",battery_level:" + std::to_string(rtag.battery) + ",rf_address:" + std::to_string(rdata.rfAdress) + "\n";
                 g_rfRecMsg.push(msg);
-                // mtxrf.unlock();
-                PLOG_VERBOSE << "InGround Pipe " << (int)rfpipe << ": Recv: " << rtag.moisture << "% RH, " << rtag.temperature << " Celsius and " << rtag.battery << "% battery";
+                PLOG_INFO << "INGORUND" << (int)rfpipe << ": Recv: " << rtag.moisture << "% RH, " << rtag.temperature << " Celsius and " << rtag.battery << "% battery";
+
+                //TELA
+                telaMedidores.status = true;
+                telaMedidores.battery = rtag.battery;
+                telaMedidores.moisture = rtag.moisture;
+                telaMedidores.temperature = rtag.temperature;
+                saveFileMedidores("medidores.txt", telaMedidores);
             }
         }
 
@@ -200,24 +338,6 @@ void nrf24Read()
         if (testCHub)
             testControllerHub();
     }
-}
-
-//configureRadio: Configure RF24 radio
-void configureRadio()
-{
-    radio.setAutoAck(true);
-    radio.setDataRate(RF24_250KBPS);
-    radio.setPALevel(RF24_PA_HIGH);
-    radio.setChannel(76);
-    radio.setCRCLength(RF24_CRC_16);
-    radio.setRetries(5, 15); // 5*250us delay with 15 retries
-}
-//configurePipes: Configure RF24 Pipes
-void configurePipes()
-{
-    for (uint8_t i = 1; i < 6; i++)
-        radio.openReadingPipe(i, pipes[i]);
-    radio.openWritingPipe(pipes[0]);
 }
 
 void testControllerHub()

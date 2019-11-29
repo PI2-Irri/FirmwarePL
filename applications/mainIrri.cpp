@@ -20,6 +20,7 @@
 #include <string>
 #include <Irri.hpp>
 #include <TCP.hpp>
+#include <fstream>
 
 // Raspberry
 // #include <RF24/RF24.h>
@@ -64,6 +65,24 @@ Client client;
 server_observer_t observer1;
 client_observer_t observer;
 
+TtelaMedidor telaMedidores;
+TtelaAtuador telaAtuadores;
+int activeTimer = 1;
+int normalTimer = 5;
+
+void closeAll(int s)
+{
+  PLOG_WARNING << "Closing client...";
+  pipe_ret_t finishClient = tcpClient.finish();
+  PLOG_WARNING_IF(finishClient.success) << "Client closed.";
+  PLOG_WARNING_IF(!finishClient.success) << "Failed to close client.";
+
+  PLOG_WARNING << "Closing Server...";
+  pipe_ret_t finishServer = tcpServer.finish();
+  PLOG_WARNING_IF(finishServer.success) << "Server closed.";
+  PLOG_WARNING_IF(!finishServer.success) << "Failed to close Server.";
+  exit(0);
+}
 /************************************/
 /*******************************************************************************
 *       MAIN - Begin
@@ -79,6 +98,7 @@ int main(int argc, char *argv[])
 
   // signal(SIGINT, sig_exit);
   signal(SIGTSTP, signalHandler);
+  signal(SIGINT, closeAll);
 
   nrf24Setup();
 
@@ -89,7 +109,7 @@ int main(int argc, char *argv[])
   std::thread tTcpServer(tcpServerOpen, 9001); // spawn new thread that calls foo()
   std::thread tTcpClient(tcpClientSend, 9000); // spawn new thread that calls foo()
 
-  PLOG_INFO << "Aplication Started\n";
+  PLOG_WARNING << "Aplication Started\n";
 
   // synchronize threads:
   tReceiveNrf24.join(); // pauses until first finishes
